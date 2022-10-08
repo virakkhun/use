@@ -1,0 +1,28 @@
+{
+  "name": "react-use-hooks",
+  "version": "1.0.0-alpha",
+  "description": "The simple react hooks.",
+  "main": "index.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/virakkhun/react-use-hooks.git"
+  },
+  "keywords": [
+    "react",
+    "react-dom",
+    "react-hooks",
+    "hooks",
+    "dom",
+    "utilities"
+  ],
+  "author": "Virak Khun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/virakkhun/react-use-hooks/issues"
+  },
+  "homepage": "https://github.com/virakkhun/react-use-hooks#readme",
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

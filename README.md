@@ -8,9 +8,11 @@
   </span>
 </p>
 
-## 🪝 Install
+## 📖 Rrerequisite
 
-> Work with React 18 and above
+- Latest - [React](https://reactjs.org/) ^18
+
+## 🪝 Install
 
 ```bash
 
@@ -47,10 +49,15 @@ const App = () => {
 export default App
 ```
 
-## Inspired By
+## ✨ Inspired By
 
 - [vueuse](https://vueuse.org/)
 - [usehooks](https://usehooks.com/)
+
+## 🥷
+
+- Written In [TS](https://www.typescriptlang.org/)
+- Documented [tsdoc](https://tsdoc.org/)
 
 ## 📃 License
 

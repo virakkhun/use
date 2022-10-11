@@ -1,0 +1,4 @@
+.prettierrc
+docs
+rollup.config.js
+src

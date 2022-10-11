@@ -30,7 +30,7 @@ export function useNetworkConnection(options?: options) {
 		const navigator = window?.navigator
 
 		if (navigator && 'connection' in navigator) {
-			const nav = navigator.connection as options
+			const nav = (navigator as any).connection as options
 			setNetwork({
 				downlink: nav.downlink,
 				effectiveType: nav.effectiveType,

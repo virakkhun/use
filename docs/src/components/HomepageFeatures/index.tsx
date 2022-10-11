@@ -4,19 +4,19 @@ import styles from './styles.module.css'
 
 type FeatureItem = {
 	title: string
-	Svg: React.ComponentType<React.ComponentProps<'svg'>>
+	Svg: React.ComponentType<React.ComponentProps<'img'>>
 	description: JSX.Element
 }
 
 const FeatureList: FeatureItem[] = [
 	{
 		title: 'Easy to Use',
-		Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+		Svg: require('@site/static/img/undraw_to_the_moon_re_q21i.svg').default,
 		description: <>URH-react-hooks is rely on the React.</>,
 	},
 	{
 		title: 'Focus on What Matters',
-		Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+		Svg: require('@site/static/img/undraw_programming_re_kg9v.svg').default,
 		description: <>URH-react-hooks make your day happier.</>,
 	},
 	{

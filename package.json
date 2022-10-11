@@ -1,6 +1,6 @@
 {
 	"name": "urh-react-hooks",
-	"version": "v1.1.0-alpha",
+	"version": "v1.2.0-alpha",
 	"description": "The simple react hooks.",
 	"main": "index.ts",
 	"repository": {

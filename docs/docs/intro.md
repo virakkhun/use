@@ -10,6 +10,7 @@ Welcome to **URH[use react hooks🪝]**.
 
 - [React](https://reactjs.org) ^18.*
 - [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
+- [TypeScript](https://www.typescriptlang.org/)
 
 ## Installation
 
@@ -47,3 +48,17 @@ const App = () => {
 
 export default App
 ```
+
+## ✨ Inspired By
+
+- [vueuse](https://vueuse.org/)
+- [usehooks](https://usehooks.com/)
+
+## 🥷 Written
+
+- Written In [TS](https://www.typescriptlang.org/)
+- Using [tsdoc](https://tsdoc.org/) to documented
+
+## 📃 License
+
+[MIT License](https://github.com/vueuse/vueuse/blob/main/LICENSE) © 2022-PRESENT [Virak Khun](https://github.com/virakkhun)

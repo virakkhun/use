@@ -8,24 +8,26 @@
   </span>
 </p>
 
-## 📖 Rrerequisite
+## 📖 Prerequisite
 
 - Latest - [React](https://reactjs.org/) ^18
 
 ## 🪝 Install
 
+> with npm:
+
 ```bash
-
 npm install urh-react-hooks
+```
+> with yarn:
 
-or
-
+```bash
 yarn add urh-react-hooks
 ```
 
 ## 💅 Usage
 
-```ts
+```tsx
 
 import { useOnline } from 'urh-react-hooks'
 

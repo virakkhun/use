@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-	title: 'URH[use react hooks🪝]',
-	tagline: 'The simple react hooks',
+	title: 'URH[🪝]',
+	tagline: 'The simple react hooks.',
 	url: 'https://your-docusaurus-test-site.com',
 	baseUrl: '/',
 	onBrokenLinks: 'throw',

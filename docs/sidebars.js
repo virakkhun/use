@@ -21,7 +21,13 @@ const sidebars = {
 			label: 'Hooks',
 			collapsed: false,
 			collapsible: true,
-			items: ['hooks/use-online'],
+			items: [
+				'hooks/use-online',
+				'hooks/use-accept-only-interger',
+				'hooks/use-language',
+				'hooks/use-network-connection',
+				'hooks/user-intersect',
+			],
 		},
 	],
 }

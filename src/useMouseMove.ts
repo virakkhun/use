@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { useEventListener } from './types'
 
 export type MouseOptions = {
 	/**
@@ -33,11 +34,16 @@ export type MouseOptions = {
 /**
  * Return a stateful value of mouse coordinate.
  *
- * @see https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event
  * @returns The coordinate of `pageX`, `pageY`, `clientX` and `clientY`
+ * @see https://urh-react-hooks.vercel.app/docs/hooks/use-mouse-move
  */
-export function useMouse(): MouseOptions {
-	const [mouse, setMouse] = useState({} as MouseOptions)
+export function useMouseMove(): MouseOptions {
+	const [mouse, setMouse] = useState<MouseOptions>({
+		clientX: 0,
+		clientY: 0,
+		pageX: 0,
+		pageY: 0,
+	})
 
 	function init(ev: MouseEvent) {
 		if (typeof window !== undefined) {
@@ -50,10 +56,12 @@ export function useMouse(): MouseOptions {
 		}
 	}
 
-	useEffect(() => {
-		window.addEventListener('mousemove', init)
-		window.removeEventListener('mousemove', init)
-	}, [mouse.clientX, mouse.clientY, mouse.pageX, mouse.pageY])
+	useEventListener<any, keyof number[]>('mousemove', init, [
+		mouse.clientX,
+		mouse.clientY,
+		mouse.pageX,
+		mouse.pageY,
+	])
 
 	return {
 		clientX: mouse.clientX,

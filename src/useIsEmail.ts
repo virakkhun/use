@@ -17,6 +17,7 @@ export type isEmail = {
  * @initial `isEmail = false`
  *
  * @returns `isEmail` & `checkIfEmail()`
+ * @see https://urh-react-hooks.vercel.app/docs/hooks/use-is-email
  */
 export function useIsEmail(value: string): isEmail {
 	const [isEmail, setIsEmail] = useState<boolean>(false)

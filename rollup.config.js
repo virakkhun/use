@@ -1,7 +1,7 @@
 import dts from 'rollup-plugin-dts'
 import esbuild from 'rollup-plugin-esbuild'
-import { terser } from 'rollup-plugin-terser'
 import packages from './package.json'
+import { terser } from 'rollup-plugin-terser'
 
 const name = packages.main.replace(/\.js$/, '')
 
@@ -25,6 +25,7 @@ export default [
 				sourcemap: true,
 			},
 		],
+		external: ['react', 'react-dom'],
 	}),
 	bundle({
 		plugins: [dts()],

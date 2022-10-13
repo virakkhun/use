@@ -3,6 +3,7 @@ import resolve from '@rollup/plugin-node-resolve'
 import esbuild from 'rollup-plugin-esbuild'
 import packages from './package.json'
 import commonjs from '@rollup/plugin-commonjs'
+import { terser } from 'rollup-plugin-terser'
 
 const name = packages.main.replace(/\.cjs$/, '')
 
@@ -27,6 +28,9 @@ export default [
 				file: `${name}.min.js`,
 				format: 'umd',
 				name: `${name}.min.js`,
+				globals: {
+					react: 'React',
+				},
 			},
 		],
 		external: ['react', 'react-dom'],
@@ -37,6 +41,5 @@ export default [
 			file: `${name}.d.ts`,
 			format: 'es',
 		},
-		external: Object.keys(packages.peerDependencies),
 	}),
 ]

@@ -21,7 +21,7 @@ type options = {
 
 /**
  * Return a current status of network.
- * @see https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation
+ * @see https://urh-react-hooks.vercel.app/docs/hooks/use-network-connection
  */
 export function useNetworkConnection(options?: options) {
 	const [network, setNetwork] = useState<typeof options>({} as options)

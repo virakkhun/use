@@ -3,11 +3,10 @@ import { useReducer } from 'react'
 /**
  * A hook use to accept only interger of an input field
  * * use Ctrl + Backspace to clear all value in input field
- * @closure setValue
- * @closure handleKey
- * @return value , setValue, handleKey
+ * @returns `value` , `setValue`, `handleKey`
+ * @see https://urh-react-hooks.vercel.app/docs/hooks/use-accept-only-interger
  * @example
- * ```ts
+ * ```tsx
  * const { value, setValue, handleKey } = useAcceptOnlyInteger
  * return (
  *   <input

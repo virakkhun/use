@@ -1,9 +1,9 @@
-import { terser } from 'rollup-plugin-terser'
 import dts from 'rollup-plugin-dts'
 import resolve from '@rollup/plugin-node-resolve'
 import esbuild from 'rollup-plugin-esbuild'
-import commonjs from '@rollup/plugin-commonjs'
 import packages from './package.json'
+import commonjs from '@rollup/plugin-commonjs'
+import { terser } from 'rollup-plugin-terser'
 
 const name = packages.main.replace(/\.cjs$/, '')
 
@@ -28,9 +28,12 @@ export default [
 				file: `${name}.min.js`,
 				format: 'umd',
 				name: `${name}.min.js`,
+				globals: {
+					react: 'React',
+				},
 			},
 		],
-		external: Object.keys(packages.peerDependencies),
+		external: ['react', 'react-dom'],
 	}),
 	bundle({
 		plugins: [dts()],
@@ -38,6 +41,5 @@ export default [
 			file: `${name}.d.ts`,
 			format: 'es',
 		},
-		external: Object.keys(packages.peerDependencies),
 	}),
 ]

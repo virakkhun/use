@@ -1,5 +1,5 @@
 ---
-id: user-intersect
+id: use-intersect
 title: useIntersectionObserver
 description: useIntersectionObserver is an intersection function which trigger when it reach the targets.
 tags: 

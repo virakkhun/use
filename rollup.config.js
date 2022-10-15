@@ -1,9 +1,9 @@
+import { terser } from 'rollup-plugin-terser'
 import dts from 'rollup-plugin-dts'
 import resolve from '@rollup/plugin-node-resolve'
 import esbuild from 'rollup-plugin-esbuild'
-import packages from './package.json'
 import commonjs from '@rollup/plugin-commonjs'
-import { terser } from 'rollup-plugin-terser'
+import packages from './package.json' assert { type: 'json' }
 
 const name = packages.main.replace(/\.cjs$/, '')
 

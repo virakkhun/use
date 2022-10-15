@@ -9,7 +9,7 @@ tags:
 
 ### Definition
 
-- useIntersectionObserver is an intersection function which trigger when it reach the targets.
+- useNetworkConnection is a hook which return network type, downlink, rtt, saveData.
 
 ### Usage Example
 

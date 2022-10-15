@@ -21,7 +21,7 @@ export interface intersectionObserverOptions {
  * @params `threshold` , `rootMargin`, `root`, `target`, `className`
  * @types number, string | px | em | rem | etc, Element | Document | null | undefined, string, string
  * @return void
- * @see https://urh-react-hooks.vercel.app/docs/hooks/user-intersect
+ * @see https://urh-react-hooks.vercel.app/docs/hooks/use-intersect
  */
 export function useIntersectionObserver(options: intersectionObserverOptions) {
 	const {

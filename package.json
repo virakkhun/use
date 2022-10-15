@@ -6,6 +6,7 @@
 	"description": "The simple react hooks.",
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.mjs",
+	"type": "module",
 	"typings": "./dist/index.d.ts",
 	"files": [
 		"dist"

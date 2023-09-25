@@ -19,14 +19,12 @@ jobs:
           yarn install
           ls -la
 
-      - name: build urh-react-hooks
+      - name: build urh-react-hooks & publish
         run: |
           yarn build
           cp README.md packages/urh-react-hooks/
           cd packages/urh-react-hooks
           ls -la
-
-      - name: publish to npm registry
-        run: npm publish
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

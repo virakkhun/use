@@ -16,21 +16,17 @@ export interface useOnline {
 export function useOnline(): useOnline {
 	const [isOnline, setIsOnline] = useState<boolean>(true)
 
-	function online() {
-		setIsOnline(true)
-	}
-
-	function offline() {
-		setIsOnline(false)
+	const toggleOnlineState = () => {
+		setIsOnline((online) => !online)
 	}
 
 	useEffect(() => {
-		window.addEventListener('online', online)
-		window.addEventListener('offline', offline)
+		window.addEventListener('online', toggleOnlineState)
+		window.addEventListener('offline', toggleOnlineState)
 
 		return () => (
-			window.removeEventListener('online', online),
-			window.removeEventListener('offline', offline)
+			window.removeEventListener('online', toggleOnlineState),
+			window.removeEventListener('offline', toggleOnlineState)
 		)
 	}, [isOnline])
 

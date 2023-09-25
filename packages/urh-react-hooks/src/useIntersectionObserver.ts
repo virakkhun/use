@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { nullOrUndefined } from '../utils/null-or-undefined.util'
 
 export interface intersectionObserverOptions {
 	threshold?: number
@@ -33,26 +34,27 @@ export function useIntersectionObserver(options: intersectionObserverOptions) {
 	} = options
 
 	const intersect = () => {
-		if (typeof IntersectionObserver !== undefined) {
-			const observer = new IntersectionObserver(
-				(entries) => {
-					entries.forEach((entry) => {
-						entry.target.classList.toggle(className)
+		if (nullOrUndefined(typeof IntersectionObserver))
+			throw new Error('IntersectionObserver is not defined.')
 
-						if (entry.isIntersecting) observer.unobserve(entry.target)
-					})
-				},
-				{
-					threshold: threshold,
-					root: root,
-					rootMargin: rootMargin,
-				},
-			)
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					entry.target.classList.toggle(className)
 
-			document.querySelectorAll(target).forEach((t: Element) => {
-				observer.observe(t)
-			})
-		}
+					if (entry.isIntersecting) observer.unobserve(entry.target)
+				})
+			},
+			{
+				threshold: threshold,
+				root: root,
+				rootMargin: rootMargin,
+			},
+		)
+
+		document.querySelectorAll(target).forEach((t: Element) => {
+			observer.observe(t)
+		})
 	}
 
 	useEffect(() => {

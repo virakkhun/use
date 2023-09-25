@@ -14,13 +14,9 @@ a small simple collections of react hooks
 
 ### 🪝 Install
 
-> with npm:
-
 ```bash
 npm install urh-react-hooks
 ```
-
-> with yarn:
 
 ```bash
 yarn add urh-react-hooks
@@ -29,24 +25,16 @@ yarn add urh-react-hooks
 ### 💅 Usage
 
 ```tsx
-
 import { useOnline } from 'urh-react-hooks'
 
 const App = () => {
-  const { isOnline } = useOnline()
+	const { isOnline } = useOnline()
 
-  return (
-    <>
-      <div>
-        {  
-          isOnline ? 
-            <p>Online</p>
-            :
-            <p>Offile</p>
-        }
-      </div>
-    </>
-  )
+	return (
+		<>
+			<div>{isOnline ? <p>Online</p> : <p>Offile</p>}</div>
+		</>
+	)
 }
 
 export default App

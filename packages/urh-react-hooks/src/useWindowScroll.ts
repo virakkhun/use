@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { useEventListener } from './types'
+import { useState } from 'react'
+import { useEventListener } from './useEventLister'
 
 export type WindowScrollOption = {
 	/**
@@ -20,24 +20,19 @@ export type WindowScrollOption = {
  * @see https://urh-react-hooks.vercel.app/docs/hooks/use-window-scroll
  */
 export function useWindowScroll(): WindowScrollOption {
-	const [scroll, setScroll] = useState<WindowScrollOption>({
+	const [{ scrollX, scrollY }, setScroll] = useState<WindowScrollOption>({
 		scrollX: 0,
 		scrollY: 0,
 	})
 
 	const init = () => {
-		if (typeof window !== 'undefined') {
-			setScroll({
-				scrollX: window.scrollX,
-				scrollY: window.scrollY,
-			})
-		}
+		setScroll(() => ({
+			scrollX: window.scrollX,
+			scrollY: window.scrollY,
+		}))
 	}
 
-	useEventListener<any, keyof number[]>('scroll', init, [
-		scroll.scrollX,
-		scroll.scrollY,
-	])
+	useEventListener('scroll', init, [scrollX, scrollY])
 
 	return {
 		scrollX,

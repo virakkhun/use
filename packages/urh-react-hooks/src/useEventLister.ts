@@ -6,13 +6,13 @@
 
 import { useEffect } from 'react'
 
-type EventType = keyof WindowEventMap
-type ListerType = EventListenerOrEventListenerObject
+type EventMapType = keyof WindowEventMap
+type ListenerType = EventListenerOrEventListenerObject
 
 export function useEventListener<
-	MaybeType extends ListerType,
+	MaybeType extends ListenerType = ListenerType,
 	MaybeDep = React.DependencyList,
->(type: EventType, handler: MaybeType, deps?: MaybeDep[]) {
+>(type: EventMapType, handler: MaybeType, deps?: MaybeDep[]) {
 	return useEffect(() => {
 		window.addEventListener(type, handler)
 

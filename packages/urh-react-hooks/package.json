@@ -1,0 +1,45 @@
+{
+	"name": "urh-react-hooks",
+	"version": "1.2.6",
+	"private": true,
+	"author": "Virak Khun",
+	"license": "MIT",
+	"description": "The simple react hooks.",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
+	"type": "module",
+	"typings": "./dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/virakkhun/urh-react-hooks.git"
+	},
+	"exports": {
+		".": {
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.cjs"
+		},
+		"./*": "./*"
+	},
+	"keywords": [
+		"react",
+		"react-dom",
+		"react-hooks",
+		"hooks",
+		"dom",
+		"utilities"
+	],
+	"bugs": {
+		"url": "https://github.com/virakkhun/urh-react-hooks.git/issues"
+	},
+	"homepage": "https://github.com/virakkhun/urh-react-hooks.git#readme",
+	"peerDependencies": {
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com"
+	}
+}

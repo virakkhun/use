@@ -92,7 +92,7 @@ export function useGeolocaiton(): geoLocationReturn {
 				longitude,
 			} = coords
 
-			setGeo({
+			setGeo(() => ({
 				accuracy: accuracy,
 				latitude: latitude,
 				longitude: longitude,
@@ -100,15 +100,15 @@ export function useGeolocaiton(): geoLocationReturn {
 				altitudeAccuracy: altitudeAccuracy,
 				heading: heading,
 				speed: speed,
-			})
+			}))
 		}
 
 		const error = (payload: geoError) => {
-			setGeoError({
+			setGeoError(() => ({
 				code: payload.code,
 				message: payload.message,
 				PERMISSION_DENIED: payload.PERMISSION_DENIED,
-			})
+			}))
 		}
 	}
 

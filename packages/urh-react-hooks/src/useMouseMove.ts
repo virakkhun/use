@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useEventListener } from './types'
+import { useEventListener } from './useEventLister'
 
 export type MouseOptions = {
 	/**
@@ -38,35 +38,30 @@ export type MouseOptions = {
  * @see https://urh-react-hooks.vercel.app/docs/hooks/use-mouse-move
  */
 export function useMouseMove(): MouseOptions {
-	const [mouse, setMouse] = useState<MouseOptions>({
-		clientX: 0,
-		clientY: 0,
-		pageX: 0,
-		pageY: 0,
-	})
+	const [{ clientX, clientY, pageX, pageY }, setMouse] = useState<MouseOptions>(
+		{
+			clientX: 0,
+			clientY: 0,
+			pageX: 0,
+			pageY: 0,
+		},
+	)
 
-	function init(ev: MouseEvent) {
-		if (typeof window !== undefined) {
-			setMouse({
-				clientX: ev.clientX,
-				clientY: ev.clientY,
-				pageX: ev.pageX,
-				pageY: ev.pageY,
-			})
-		}
+	const init = (ev: MouseEvent) => {
+		setMouse(() => ({
+			clientX: ev.clientX,
+			clientY: ev.clientY,
+			pageX: ev.pageX,
+			pageY: ev.pageY,
+		}))
 	}
 
-	useEventListener<any, keyof number[]>('mousemove', init, [
-		mouse.clientX,
-		mouse.clientY,
-		mouse.pageX,
-		mouse.pageY,
-	])
+	useEventListener('mousemove', () => init, [clientX, clientY, pageX, pageY])
 
 	return {
-		clientX: mouse.clientX,
-		clientY: mouse.clientY,
-		pageX: mouse.pageX,
-		pageY: mouse.pageY,
+		clientX,
+		clientY,
+		pageX,
+		pageY,
 	}
 }

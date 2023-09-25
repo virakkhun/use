@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-type options = {
+type Connection = {
 	/**
 	 * Current type of network
 	 */
@@ -23,21 +23,25 @@ type options = {
  * Return a current status of network.
  * @see https://urh-react-hooks.vercel.app/docs/hooks/use-network-connection
  */
-export function useNetworkConnection(options?: options) {
-	const [network, setNetwork] = useState<typeof options>({} as options)
+export function useNetworkConnection() {
+	const [network, setNetwork] = useState({} as Connection)
 
 	const init = () => {
-		const navigator = window?.navigator
+		const navigator = window.navigator
 
-		if (navigator && 'connection' in navigator) {
-			const nav = (navigator as any).connection as options
-			setNetwork({
-				downlink: nav.downlink,
-				effectiveType: nav.effectiveType,
-				rtt: nav.rtt,
-				saveData: nav.saveData,
-			})
-		}
+		if (!navigator)
+			throw new Error('navigator does not exist in window object.')
+		if (!('connection' in navigator))
+			throw new Error('connect object does not exist in navigator')
+
+		const nav = navigator.connection as Connection
+
+		setNetwork(() => ({
+			downlink: nav.downlink,
+			effectiveType: nav.effectiveType,
+			rtt: nav.rtt,
+			saveData: nav.saveData,
+		}))
 	}
 
 	useEffect(() => {

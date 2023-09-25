@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { useEventListener } from './types'
+import { useState } from 'react'
+import { useEventListener } from './useEventLister'
 
 export type windowSizeOption = {
 	/**
@@ -26,20 +26,15 @@ export function useWindowSize(): windowSizeOption {
 	})
 
 	const init = () => {
-		if (typeof window !== null) {
-			const win = window
+		const win = window
 
-			setWindowSize({
-				height: win.innerHeight,
-				width: win.innerWidth,
-			})
-		}
+		setWindowSize({
+			height: win.innerHeight,
+			width: win.innerWidth,
+		})
 	}
 
-	useEventListener<any, keyof number[]>('resize', init, [
-		windowSize.width,
-		windowSize.height,
-	])
+	useEventListener('resize', init, [windowSize.width, windowSize.height])
 
 	return {
 		height: windowSize.height,

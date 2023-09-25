@@ -46,7 +46,8 @@ export function useAcceptOnlyInteger() {
 	]
 
 	const [value, dispatch] = useReducer((state: string, action: string) => {
-		return (state = action)
+		state = action
+		return state
 	}, '')
 
 	/**

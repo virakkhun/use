@@ -6,12 +6,12 @@ import { useEffect, useState } from 'react'
  * @see https://urh-react-hooks.vercel.app/docs/hooks/use-language
  */
 export function useLanguage() {
-	const [lang, setLang] = useState<string>(navigator.language)
+	const [lang, setLang] = useState<string | null>(navigator.language)
 
 	const init = () => {
 		const language = navigator.languages
 
-		setLang(language[1])
+		setLang(() => language[0] ?? null)
 	}
 
 	useEffect(() => {

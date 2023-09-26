@@ -4,14 +4,14 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"start:demo": "yarn --cwd packages/demo start",
-		"build:demo": "yarn --cwd packages/demo build",
-		"preview:demo": "yarn --cwd packages/demo preview",
-		"start:doc": "yarn --cwd packages/documentation start",
-		"serve:doc": "yarn --cwd packages/documentation serve",
+		"start:demo": "yarn --cwd demo start",
+		"build:demo": "yarn --cwd demo build",
+		"preview:demo": "yarn --cwd demo preview",
+		"start:doc": "yarn --cwd docs start",
+		"serve:doc": "yarn --cwd docs serve",
 		"build": "yarn clean && yarn rollup",
 		"rollup": "rollup --config",
-		"clean": "rm -rf dist"
+		"clean": "rm -rf packages/urh-react-hooks/dist"
 	},
 	"repository": {
 		"type": "git",
@@ -30,7 +30,9 @@
 	},
 	"homepage": "https://github.com/virakkhun/urh-react-hooks.git#readme",
 	"workspaces": [
-		"packages/*"
+		"packages/*",
+		"demo",
+		"docs"
 	],
 	"dependencies": {
 		"@docusaurus/core": "2.1.0",

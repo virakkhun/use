@@ -6,6 +6,7 @@
 	"scripts": {
 		"start:demo": "yarn --cwd demo start",
 		"build:demo": "yarn --cwd demo build",
+		"build:docs": "yarn --cwd docs build",
 		"preview:demo": "yarn --cwd demo preview",
 		"start:doc": "yarn --cwd docs start",
 		"serve:doc": "yarn --cwd docs serve",

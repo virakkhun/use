@@ -27,7 +27,7 @@ export function useIsEmail(value: string): isEmail {
 	)
 
 	const checkIfEmail = () => {
-		setIsEmail(regex.test(value))
+		setIsEmail(() => regex.test(value))
 	}
 
 	return {

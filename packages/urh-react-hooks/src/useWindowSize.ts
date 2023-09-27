@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useEventListener } from './useEventLister'
 
-export type windowSizeOption = {
+export type WindowSize = {
 	/**
 	 * The width of the window
 	 */
@@ -19,8 +19,8 @@ export type windowSizeOption = {
  * @returns the `width` and the `height`
  * @see https://urh-react-hooks.vercel.app/docs/hooks/use-window-size
  */
-export function useWindowSize(): windowSizeOption {
-	const [windowSize, setWindowSize] = useState<windowSizeOption>({
+export function useWindowSize(): WindowSize {
+	const [{ height, width }, setWindowSize] = useState<WindowSize>({
 		height: window.innerHeight,
 		width: window.innerWidth,
 	})
@@ -34,10 +34,10 @@ export function useWindowSize(): windowSizeOption {
 		})
 	}
 
-	useEventListener('resize', init, [windowSize.width, windowSize.height])
+	useEventListener('resize', init, [height, width])
 
 	return {
-		height: windowSize.height,
-		width: windowSize.width,
+		height,
+		width,
 	}
 }

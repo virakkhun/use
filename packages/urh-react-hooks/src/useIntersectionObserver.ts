@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { nullOrUndefined } from '../utils/null-or-undefined.util'
 
-export interface intersectionObserverOptions {
+export type IntersectionObserver = {
 	threshold?: number
 	rootMargin?: string | undefined
 	root?: Element | Document | null | undefined
@@ -24,7 +24,7 @@ export interface intersectionObserverOptions {
  * @return void
  * @see https://urh-react-hooks.vercel.app/docs/hooks/use-intersect
  */
-export function useIntersectionObserver(options: intersectionObserverOptions) {
+export function useIntersectionObserver(options: IntersectionObserver) {
 	const {
 		threshold = 0,
 		rootMargin = '0px',

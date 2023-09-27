@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useEventListener } from './useEventLister'
 
-export type MouseOptions = {
+export type MouseMove = {
 	/**
 	 * The X coordinate of the mouse pointer in local (DOM content) coordinates.
 	 *
@@ -37,15 +37,13 @@ export type MouseOptions = {
  * @returns The coordinate of `pageX`, `pageY`, `clientX` and `clientY`
  * @see https://urh-react-hooks.vercel.app/docs/hooks/use-mouse-move
  */
-export function useMouseMove(): MouseOptions {
-	const [{ clientX, clientY, pageX, pageY }, setMouse] = useState<MouseOptions>(
-		{
-			clientX: 0,
-			clientY: 0,
-			pageX: 0,
-			pageY: 0,
-		},
-	)
+export function useMouseMove(): MouseMove {
+	const [{ clientX, clientY, pageX, pageY }, setMouse] = useState<MouseMove>({
+		clientX: 0,
+		clientY: 0,
+		pageX: 0,
+		pageY: 0,
+	})
 
 	const init = (ev: MouseEvent) => {
 		setMouse(() => ({

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export interface useOnline {
+export type ConnectionStatus = {
 	isOnline: boolean
 }
 
@@ -13,8 +13,8 @@ export interface useOnline {
  *
  * @see https://urh-react-hooks.vercel.app/docs/hooks/use-online
  */
-export function useOnline(): useOnline {
-	const [isOnline, setIsOnline] = useState<boolean>(true)
+export function useOnline(): ConnectionStatus {
+	const [isOnline, setIsOnline] = useState(true)
 
 	const toggleOnlineState = () => {
 		setIsOnline((online) => !online)

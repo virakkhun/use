@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
+import { nullOrUndefined } from '../utils/null-or-undefined.util'
 
-export type geolocationOption = {
+export type Coords = {
 	latitude: number | null
 	longitude: number | null
 	accuracy: number | null
@@ -10,26 +11,26 @@ export type geolocationOption = {
 	altitudeAccuracy: number | null
 }
 
-export type geoError = {
+export type Error = {
 	code: number | null
 	message: string | null
 	PERMISSION_DENIED: number | null
 }
 
-export type geoLocationReturn = {
+export type GeoLocation = {
 	/**
 	 * Geolocation coords type.
 	 *
 	 * @return `coords`
 	 */
-	coords: geolocationOption
+	coords: Coords
 
 	/**
 	 * Geolocation errors type.
 	 *
 	 * @return `error`
 	 */
-	error: geoError
+	error: Error
 }
 
 /**
@@ -38,8 +39,8 @@ export type geoLocationReturn = {
  * @returns `coords` & `errors`
  * @see https://urh-react-hooks.vercel.app/docs/hooks/use-geo
  */
-export function useGeolocaiton(): geoLocationReturn {
-	const [geo, setGeo] = useState<geolocationOption>({
+export function useGeolocaiton(): GeoLocation {
+	const [geo, setGeo] = useState<Coords>({
 		altitude: null,
 		altitudeAccuracy: null,
 		heading: null,
@@ -49,7 +50,7 @@ export function useGeolocaiton(): geoLocationReturn {
 		longitude: null,
 	})
 
-	const [geoError, setGeoError] = useState<geoError>({
+	const [geoError, setGeoError] = useState<Error>({
 		code: null,
 		message: null,
 		PERMISSION_DENIED: null,
@@ -69,47 +70,48 @@ export function useGeolocaiton(): geoLocationReturn {
 			maximumAge: 0,
 		}
 
-		if (navigator && 'geolocation' in navigator) {
-			navigator.geolocation.getCurrentPosition(
-				(s) => {
-					success(s.coords)
-				},
-				(e) => {
-					error(e)
-				},
-				options,
-			)
-		}
+		if (nullOrUndefined(navigator) && !('geolocation' in navigator))
+			throw new Error('geolocation does not exist in navigator object.')
 
-		const success = (coords: geolocationOption) => {
-			const {
-				altitude,
-				altitudeAccuracy,
-				heading,
-				speed,
-				accuracy,
-				latitude,
-				longitude,
-			} = coords
+		navigator.geolocation.getCurrentPosition(
+			(s) => {
+				success(s.coords)
+			},
+			(e) => {
+				error(e)
+			},
+			options,
+		)
+	}
 
-			setGeo(() => ({
-				accuracy: accuracy,
-				latitude: latitude,
-				longitude: longitude,
-				altitude: altitude,
-				altitudeAccuracy: altitudeAccuracy,
-				heading: heading,
-				speed: speed,
-			}))
-		}
+	const success = (coords: Coords) => {
+		const {
+			altitude,
+			altitudeAccuracy,
+			heading,
+			speed,
+			accuracy,
+			latitude,
+			longitude,
+		} = coords
 
-		const error = (payload: geoError) => {
-			setGeoError(() => ({
-				code: payload.code,
-				message: payload.message,
-				PERMISSION_DENIED: payload.PERMISSION_DENIED,
-			}))
-		}
+		setGeo(() => ({
+			accuracy: accuracy,
+			latitude: latitude,
+			longitude: longitude,
+			altitude: altitude,
+			altitudeAccuracy: altitudeAccuracy,
+			heading: heading,
+			speed: speed,
+		}))
+	}
+
+	const error = (payload: Error) => {
+		setGeoError(() => ({
+			code: payload.code,
+			message: payload.message,
+			PERMISSION_DENIED: payload.PERMISSION_DENIED,
+		}))
 	}
 
 	useEffect(() => {

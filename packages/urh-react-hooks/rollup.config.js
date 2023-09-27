@@ -4,8 +4,8 @@ import terser from '@rollup/plugin-terser'
 import dts from 'rollup-plugin-dts'
 import esbuild from 'rollup-plugin-esbuild'
 
-const entry = './packages/urh-react-hooks/index.ts'
-const outputDir = './packages/urh-react-hooks/dist'
+const entry = './index.ts'
+const outputDir = './dist'
 
 export default [
 	{

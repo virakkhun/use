@@ -1,8 +1,9 @@
 name: Release
 
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - main
 
 jobs:
   release:
@@ -20,12 +21,12 @@ jobs:
       - name: Install Dependencies
         run: yarn
 
+      - name: Switch Dir
+        run: cd packages/urh-react-hooks
+
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
-        run: |
-          cd packages/urh-react-hooks
-          ls -la
         with:
           publish: yarn release
         env:

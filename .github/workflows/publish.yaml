@@ -23,6 +23,9 @@ jobs:
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
+        run: |
+          cd packages/urh-react-hooks
+          ls -la
         with:
           publish: yarn release
         env:

@@ -10,9 +10,7 @@
 		"preview:demo": "yarn --cwd demo preview",
 		"start:doc": "yarn --cwd docs start",
 		"serve:doc": "yarn --cwd docs serve",
-		"build": "yarn clean && yarn rollup",
-		"rollup": "rollup --config",
-		"clean": "rm -rf packages/urh-react-hooks/dist"
+		"release": "yarn --cwd packages/urh-react-hooks release"
 	},
 	"repository": {
 		"type": "git",
@@ -45,18 +43,19 @@
 		"react-dom": "^18.2.0"
 	},
 	"devDependencies": {
+		"@docusaurus/module-type-aliases": "2.1.0",
+		"@changesets/cli": "^2.26.2",
+		"@rollup/plugin-commonjs": "^25.0.4",
+		"@rollup/plugin-node-resolve": "^15.2.1",
+		"@rollup/plugin-terser": "^0.4.3",
+		"@tsconfig/docusaurus": "^1.0.5",
 		"@types/react": "^18.2.15",
 		"@types/react-dom": "^18.2.7",
-		"rollup-plugin-dts": "^6.0.2",
-		"rollup": "^3.29.1",
-		"rollup-plugin-esbuild": "^6.0.1",
-		"@rollup/plugin-node-resolve": "^15.2.1",
-		"@rollup/plugin-commonjs": "^25.0.4",
-		"@rollup/plugin-terser": "^0.4.3",
-		"typescript": "^5.0.2 || ^4.7.4",
-		"@docusaurus/module-type-aliases": "2.1.0",
-		"@tsconfig/docusaurus": "^1.0.5",
 		"@vitejs/plugin-react": "^4.0.3",
+		"rollup": "^3.29.1",
+		"rollup-plugin-dts": "^6.0.2",
+		"rollup-plugin-esbuild": "^6.0.1",
+		"typescript": "^5.0.2 || ^4.7.4",
 		"vite": "^4.4.5"
 	}
 }

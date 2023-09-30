@@ -1,6 +1,6 @@
 {
 	"name": "urh-react-hooks",
-	"version": "1.2.16",
+	"version": "1.2.18",
 	"private": false,
 	"author": "Virak Khun",
 	"license": "MIT",
@@ -14,7 +14,8 @@
 		"./dist/index.cjs",
 		"./dist/index.d.ts",
 		"./README.md",
-		"./CHANGELOG.md"
+		"./CHANGELOG.md",
+		"./dist/**/*"
 	],
 	"scripts": {
 		"rollup": "rollup --config",
@@ -26,14 +27,6 @@
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/virakkhun/urh-react-hooks.git"
-	},
-	"exports": {
-		".": {
-			"import": "./dist/index.mjs",
-			"require": "./dist/index.cjs",
-			"types": "./dist/index.d.ts"
-		},
-		"./*": "./*"
 	},
 	"keywords": [
 		"react",

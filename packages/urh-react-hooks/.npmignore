@@ -6,4 +6,4 @@ node_modules
 tsconfig.json
 index.ts
 utils
-.changedset
+.changeset

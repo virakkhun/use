@@ -1,5 +1,15 @@
 # urh-react-hooks
 
+## 1.2.21
+
+### Patch Changes
+
+- add changeset cli
+- remove .changeset from being ship to prod
+- Edit package.json file not live when published
+- fixed typo
+- fixed dist folder disappered in prod
+
 ## 1.2.20
 
 ### Patch Changes

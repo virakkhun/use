@@ -20,7 +20,7 @@
 		"rollup": "rollup --config",
 		"clean": "rm -rf dist",
 		"build": "yarn clean && yarn rollup",
-		"version": "yarn changset && yarn changeset version",
+		"version": "yarn changeset && yarn changeset version",
 		"release": "yarn build && yarn changeset publish"
 	},
 	"repository": {

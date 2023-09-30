@@ -14,9 +14,13 @@ a small simple collections of react hooks
 
 ### 🪝 Install
 
+using NPM:
+
 ```bash
 npm install urh-react-hooks
 ```
+
+using Yarn:
 
 ```bash
 yarn add urh-react-hooks
@@ -30,11 +34,7 @@ import { useOnline } from 'urh-react-hooks'
 const App = () => {
 	const { isOnline } = useOnline()
 
-	return (
-		<>
-			<div>{isOnline ? <p>Online</p> : <p>Offile</p>}</div>
-		</>
-	)
+	return <p>{isOnline ? 'Online' : 'Offline'}</p>
 }
 
 export default App
@@ -45,7 +45,7 @@ export default App
 - [vueuse](https://vueuse.org/)
 - [usehooks](https://usehooks.com/)
 
-### 🥷
+### 🥷 Crafted
 
 - Written In [TS](https://www.typescriptlang.org/)
 - Documented [tsdoc](https://tsdoc.org/)

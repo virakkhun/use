@@ -10,7 +10,8 @@
 		"preview:demo": "yarn --cwd demo preview",
 		"start:doc": "yarn --cwd docs start",
 		"serve:doc": "yarn --cwd docs serve",
-		"release": "yarn --cwd packages/urh-react-hooks release"
+		"release": "yarn --cwd packages/urh-react-hooks release",
+		"version": "yarn --cwd packages/urh-react-hooks version"
 	},
 	"repository": {
 		"type": "git",

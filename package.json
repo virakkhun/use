@@ -1,7 +1,7 @@
 {
 	"name": "root",
 	"private": true,
-	"version": "1.2.17",
+	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
 		"start:demo": "yarn --cwd demo start",

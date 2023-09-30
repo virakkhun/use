@@ -1,22 +1,15 @@
 {
 	"name": "urh-react-hooks",
-	"version": "1.2.17",
+	"version": "1.2.19",
 	"private": false,
 	"author": "Virak Khun",
 	"license": "MIT",
 	"description": "The simple react hooks.",
-	"main": "./dist/index.cjs",
-	"module": "./dist/index.mjs",
+	"main": "dist/index.cjs",
+	"module": "dist/index.mjs",
 	"type": "module",
-	"typings": "./dist/index.d.ts",
-	"files": [
-		"./dist/index.mjs",
-		"./dist/index.cjs",
-		"./dist/index.d.ts",
-		"./README.md",
-		"./CHANGELOG.md",
-		"./dist/**/*"
-	],
+	"typings": "dist/index.d.ts",
+	"types": "dist/index.d.ts",
 	"scripts": {
 		"rollup": "rollup --config",
 		"clean": "rm -rf dist",

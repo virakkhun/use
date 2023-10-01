@@ -1,0 +1,42 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: rgb(42, 40, 40);
+}
+
+.container {
+	margin: auto auto;
+	padding: 12px 24px;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+.grid div {
+	padding: 20px;
+	text-align: center;
+	color: rgb(158, 158, 158);
+}
+
+.grid div .title {
+	font-size: bold;
+	color: rgb(197, 197, 197);
+	text-decoration: wavy;
+	font-style: italic;
+}
+
+.grid div:nth-child(2n + 1) {
+	background: rgb(76, 73, 73);
+}
+
+@media (min-width: 1024px) {
+	.grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}

@@ -4,10 +4,10 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"start:demo": "yarn --cwd demo start",
-		"build:demo": "yarn --cwd demo build",
+		"start:playgrounds": "yarn --cwd playgrounds start",
+		"build:playgrounds": "yarn --cwd playgrounds build",
+		"preview:playgrounds": "yarn --cwd playgrounds preview",
 		"build:docs": "yarn --cwd docs build",
-		"preview:demo": "yarn --cwd demo preview",
 		"start:doc": "yarn --cwd docs start",
 		"serve:doc": "yarn --cwd docs serve"
 	},

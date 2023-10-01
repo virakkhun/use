@@ -32,6 +32,7 @@ const sidebars = {
 				'hooks/use-online',
 				'hooks/use-window-scroll',
 				'hooks/use-window-size',
+				'hooks/use-os',
 			],
 		},
 	],

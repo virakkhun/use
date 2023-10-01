@@ -1,5 +1,5 @@
+import { useNetworkConnection } from '@virakkhun/react-hooks'
 import React from 'react'
-import { useNetworkConnection } from 'urh-react-hooks'
 
 export const UseNetworkConnection = () => {
 	const { network } = useNetworkConnection()

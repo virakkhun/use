@@ -1,10 +1,10 @@
 {
-	"name": "urh-react-hooks",
+	"name": "@use/react-hooks",
 	"version": "1.2.21",
 	"private": false,
 	"author": "Virak Khun",
 	"license": "MIT",
-	"description": "The simple react hooks.",
+	"description": "The collections of utilities hooks for your react app.",
 	"main": "dist/index.cjs",
 	"module": "dist/index.mjs",
 	"type": "module",

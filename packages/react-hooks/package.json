@@ -1,10 +1,10 @@
 {
-	"name": "@use/react-hooks",
-	"version": "1.2.21",
+	"name": "@virakkhun/react-hooks",
+	"version": "1.0.0",
 	"private": false,
 	"author": "Virak Khun",
 	"license": "MIT",
-	"description": "The collections of utilities hooks for your react app.",
+	"description": "The collections of hooks for your React app.",
 	"main": "dist/index.cjs",
 	"module": "dist/index.mjs",
 	"type": "module",
@@ -19,7 +19,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/virakkhun/urh-react-hooks.git"
+		"url": "git+https://github.com/virakkhun/use.git"
 	},
 	"keywords": [
 		"react",
@@ -30,9 +30,9 @@
 		"utilities"
 	],
 	"bugs": {
-		"url": "https://github.com/virakkhun/urh-react-hooks.git/issues"
+		"url": "https://github.com/virakkhun/use.git/issues"
 	},
-	"homepage": "https://github.com/virakkhun/urh-react-hooks.git#readme",
+	"homepage": "https://github.com/virakkhun/use.git#readme",
 	"peerDependencies": {
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"

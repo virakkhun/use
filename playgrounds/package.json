@@ -1,0 +1,22 @@
+{
+	"name": "demo",
+	"private": "true",
+	"type": "module",
+	"version": "1.0.0",
+	"scripts": {
+		"start": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"urh-react-hooks": "^1.2.9",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"devDependencies": {
+		"@vitejs/plugin-react": "^4.0.3",
+		"vite": "^4.4.5",
+		"@types/react": "^18.2.15",
+		"@types/react-dom": "^18.2.7"
+	}
+}

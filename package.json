@@ -1,5 +1,5 @@
 {
-	"name": "root",
+	"name": "@virakkhun/root",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
@@ -9,9 +9,7 @@
 		"build:docs": "yarn --cwd docs build",
 		"preview:demo": "yarn --cwd demo preview",
 		"start:doc": "yarn --cwd docs start",
-		"serve:doc": "yarn --cwd docs serve",
-		"release": "yarn --cwd packages/urh-react-hooks release",
-		"version": "yarn --cwd packages/urh-react-hooks version"
+		"serve:doc": "yarn --cwd docs serve"
 	},
 	"repository": {
 		"type": "git",

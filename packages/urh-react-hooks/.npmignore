@@ -1,9 +1,0 @@
-.prettierrc
-docs
-rollup.config.js
-src
-node_modules
-tsconfig.json
-index.ts
-utils
-.changeset

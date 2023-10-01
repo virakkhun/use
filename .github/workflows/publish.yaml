@@ -24,7 +24,7 @@ jobs:
 
       - name: Build & Publish
         run: |
-          cd packages/urh-react-hooks
+          cd packages/react-hooks
           yarn build
           yarn publish
         env:
